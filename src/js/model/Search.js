@@ -12,7 +12,7 @@ async doSearch(search){
         
         //result = await axios('https://forkify-api.herokuapp.com/api/get?rId='+reseps[1].recipe_id);
     }catch(error){
-        alert("Алдаа гарлаа. "+error);
+        console.log("Алдаа гарлаа. "+error);
     }
 }
 }
