@@ -3,6 +3,7 @@ export const elements = {
     searchInput : document.querySelector('.search__field'),
     resultsList : document.querySelector('.results__list'),
     searchRes : document.querySelector('.results'),
+    pageButtons : document.querySelector('.results__pages'),
 };
 export const elementString = {
     loader: 'loader'//results div dotor uussen loader dev class name n
@@ -24,5 +25,4 @@ export const clearLoader = () =>{
     if(loader){
         loader.parentElement.removeChild(loader);
     }
-    
 };
