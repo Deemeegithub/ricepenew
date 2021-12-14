@@ -1,6 +1,6 @@
 require("@babel/polyfill");
 import search from "./model/Search";
-import { elements } from "./view/base";
+import { elements, renderLoader,clearLoader} from "./view/base";
 import * as searchView from "./view/searchview";
 const state = {};
 const controlSearch = async () => {
@@ -11,7 +11,11 @@ const controlSearch = async () => {
         searchView.clearSearch();
         searchView.clearSearchQuery();
 
+        renderLoader(elements.searchRes);
+
         await state.search.doSearch();
+        clearLoader();
+
         if(state.search.result){
             searchView.renderRecipes(state.search.result);
         }else{alert("Хайлтаар илэрцгүй.");}
