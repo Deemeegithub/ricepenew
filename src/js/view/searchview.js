@@ -4,7 +4,7 @@ import { elements } from "./base";
 const renderRecipe = recipe =>{
     const markup=`
         <li>
-            <a class="results__link" href="${recipe.recipe_id}">
+            <a class="results__link" href="#${recipe.recipe_id}">
                 <figure class="results__fig">
                     <img src="${recipe.image_url}" alt="Test">
                 </figure>
@@ -30,7 +30,7 @@ export const getInput= () =>{
 export const renderRecipes = (recipes, page = 1, resPerPage = 7) =>{
     const start = (page-1) * resPerPage;
     const end = page * resPerPage;
-    console.log(recipes);
+    //console.log(recipes);
     recipes.slice(start,end).forEach(el => renderRecipe(el));
 
     const totalPages = Math.ceil(recipes.length / resPerPage);
